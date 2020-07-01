@@ -1,0 +1,44 @@
+{
+  "name": "hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --maxWorkers 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/funyaliga/hooks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/funyaliga/hooks/issues"
+  },
+  "homepage": "https://github.com/funyaliga/hooks#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@testing-library/react-hooks": "^3.3.0",
+    "@types/jest": "^26.0.3",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.1.1",
+    "tslib": "^2.0.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.9.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/*.test.(js|ts|tsx)"
+    ]
+  }
+}

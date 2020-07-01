@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": true,
+    "rootDir": "src",
+    "sourceMap": false,
+    "esModuleInterop": true,
+    "importHelpers": true
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "esm",
+    "**/__tests__",
+    "stories"
+  ]
+}
