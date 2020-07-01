@@ -1,16 +1,18 @@
 {
-  "name": "hooks",
-  "version": "1.0.0",
+  "name": "@funya._./hooks",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "tsc -w",
+    "build": "tsc",
     "test": "jest --maxWorkers 2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/funyaliga/hooks.git"
   },
-  "author": "",
+  "author": "@funya._.",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/funyaliga/hooks/issues"

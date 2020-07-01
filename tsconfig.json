@@ -5,6 +5,7 @@
     "jsx": "react",
     "declaration": true,
     "rootDir": "src",
+    "outDir": "./lib",
     "sourceMap": false,
     "esModuleInterop": true,
     "importHelpers": true
