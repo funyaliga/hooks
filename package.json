@@ -12,6 +12,7 @@
     "start": "tsc -w",
     "build": "tsc",
     "test": "jest --maxWorkers 2",
+    "docz:dev": "docz dev",
     "release": "tsc && npm publish"
   },
   "repository": {
@@ -37,6 +38,8 @@
     "tslib": "^2.0.0"
   },
   "dependencies": {
+    "@nejcm/docz-theme-extended": "^1.8.1",
+    "docz": "^2.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.9.5"

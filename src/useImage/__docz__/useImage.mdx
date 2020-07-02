@@ -1,0 +1,41 @@
+---
+name: useImage
+route: /api/useImage
+---
+
+import { Playground } from 'docz'
+import { useImage } from "../../index";
+
+# useImage #
+
+加载图片
+
+<hr />
+
+### API ###
+```jsx
+const [
+  img: HTMLImageElement,
+  status: 'loading' | 'loaded' | 'error' // 加载状态
+] = useImage(
+  src: string, // 图片链接
+  crossOrigin?: string
+);
+```
+
+<hr />
+
+### DEMO ###
+<Playground>
+  {() => {
+    const [img, status] = useImage('https://wxt.sinaimg.cn/mw1024/62194d50ly1g8ayqntoqpj207i0a0750.jpg');
+    return (
+      <div>
+        <h3>加载状态：{status}</h3>
+        <div style={{ width: '300px', height: '400px'}}>
+          {status === 'loaded' && <img src={img.src} /> }
+        </div>
+      </div>
+    )
+  }}
+</Playground>
