@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const useImage = (src: string, crossOrigin: string = '') => {
+export const useImage = (src: string, crossOrigin?: string) => {
   const [img, setImg] = useState<HTMLImageElement | undefined>(undefined);
   const [status, setStatus] = useState('loading');
 

@@ -12,6 +12,8 @@
     "start": "tsc -w",
     "build": "tsc",
     "test": "jest --maxWorkers 2",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "docz:dev": "docz dev",
     "release": "tsc && npm publish"
   },
@@ -47,13 +49,5 @@
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "clearMocks": true,
-    "coverageDirectory": "coverage",
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/*.test.(js|ts|tsx)"
-    ]
   }
 }
