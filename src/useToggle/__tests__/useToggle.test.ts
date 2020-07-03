@@ -3,17 +3,17 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { useToggle } from '../../index';
 
 describe('useToggle.test', () => {
-  it('test: defined', () => {
+  it('defined', () => {
     expect(useToggle).toBeDefined();
   });
 
-  it('test: init', async () => {
+  it('init', async () => {
     const { result } = renderHook(() => useToggle());
     expect(result.current[0]).toBe(false);
     expect(result.current[1]).toBeInstanceOf(Function);
   });
   
-  it('test: normal toggle', async () => {
+  it('normal toggle', async () => {
     const { result } = renderHook(() => useToggle());
     expect(result.current[0]).toBe(false);
 
@@ -33,7 +33,7 @@ describe('useToggle.test', () => {
     expect(result.current[0]).toBe(false);
   });
 
-  it('test: change options', async () => {
+  it('change options', async () => {
     const { result } = renderHook(() => useToggle('off', 'on'));
     expect(result.current[0]).toBe('off');
 
