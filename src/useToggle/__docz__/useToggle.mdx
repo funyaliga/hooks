@@ -8,13 +8,21 @@ import { useToggle } from "../../index";
 
 # useToggle #
 
-加载图片
+状态切换
 
 <hr />
 
 ### API ###
 ```jsx
+type IState = string | number | boolean | undefined;
 
+const [
+  offValue: IState = false,
+  onValue: IState = true,
+] = useImage(
+  state: IState, // 当前状态
+  toggle: (nextValue?: any) => void // 切换
+);
 ```
 
 <hr />
@@ -23,7 +31,7 @@ import { useToggle } from "../../index";
 <Playground>
   {() => {
     const [state1, toggle1] = useToggle();
-    const [state2, toggle2] = useToggle('on', 'off');
+    const [state2, toggle2] = useToggle('off', 'on');
     return (
       <ul>
         <li>
