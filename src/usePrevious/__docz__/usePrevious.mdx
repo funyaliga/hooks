@@ -1,0 +1,42 @@
+---
+name: usePrevious
+route: /api/usePrevious
+---
+
+import { Playground } from 'docz'
+import { usePrevious } from "../../index";
+
+# usePrevious #
+
+保存上一次渲染时的状态
+
+<hr />
+
+## API ##
+```jsx
+const [
+  prev: any, // 上一次的值
+] = useImage(
+  state: any, // 要计算的值
+);
+```
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    const [count, setCount] = React.useState(0);
+    const preCount = usePrevious(count);
+    return (
+      <div>
+        <div>preCount: {preCount}</div>
+        <div>count: {count}</div>
+        <button onClick={() => setCount(pre => pre + 1)}>+</button>
+      </div>
+    )
+  }}
+</Playground>
+
+
