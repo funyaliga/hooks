@@ -1,0 +1,55 @@
+---
+name: useCookie
+route: /api/useCookie
+---
+
+import { Playground } from 'docz'
+import { useCookie } from "../../index";
+
+# useCookie #
+
+cookie
+
+<hr />
+
+## API ##
+```jsx
+const [
+  value,
+  setValue,
+] = useCookie(
+  key: string,
+  initialValue?: InitialValue<T>,
+  options = {}
+);
+```
+
+
+### key
+cookie的key值
+
+### initialValue
+初始值
+
+### options
+配置，例子： { expires: 7, path: '' }，参考js-cookie
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    const [state, setState] = useCookie('cookie-key', 'value1');
+    return (
+      <div>
+        <div>value: {state}</div>
+        <button onClick={() => setState('value2')}>set value2</button>
+        <button onClick={() => setState('value3')}>set value3</button>
+        <button onClick={() => setState()}>clear</button>
+      </div>
+    )
+  }}
+</Playground>
+
+
