@@ -1,0 +1,48 @@
+---
+name: useTimeInterval
+route: /api/useTimeInterval
+---
+
+import { Playground } from 'docz'
+import { useTimeInterval, useToggle } from "../../index";
+
+# useTimeInterval #
+
+timeInterval hooks
+
+参考 [Making setInterval Declarative with React Hooks](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+
+<hr />
+
+## API ##
+```jsx
+useTimeInterval(
+  callback: Function,
+  delay?: number
+);
+```
+
+<hr />
+
+## DEMO ##
+<Playground>
+  {() => {
+    const [counter, setCounter] = React.useState(0)
+    const [run, toggleRun] = useToggle();
+    const delay = 1000;
+    useTimeInterval(
+      () => {
+        setCounter((pre) => pre + 1);
+      },
+      run ? delay : null
+    );
+    return (
+      <div>
+        <h4>count: {counter}</h4>
+        <button onClick={toggleRun}>{run ? 'stop' : 'start'}</button>
+      </div>
+    )
+  }}
+</Playground>
+
+

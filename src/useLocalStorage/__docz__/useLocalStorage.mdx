@@ -1,0 +1,55 @@
+---
+name: useLocalStorage
+route: /api/useLocalStorage
+---
+
+import { Playground } from 'docz'
+import { useLocalStorage } from "../../index";
+
+# useLocalStorage #
+
+localStorage hooks
+
+<hr />
+
+## API ##
+```jsx
+const [
+  value,
+  setValue,
+] = useLocalStorage(
+  key: string,
+  initialValue?: InitialValue<T>,
+);
+```
+
+
+### key
+localStorage的key值
+
+### initialValue
+初始值
+
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    if (typeof window=='undefined') {
+      return null;
+    }
+    const [state, setState] = useLocalStorage('l-storage-key', 'value1');
+    return (
+      <div>
+        <div>value: {state}</div>
+        <button onClick={() => setState('value2')}>set value2</button>
+        <button onClick={() => setState('value3')}>set value3</button>
+        <button onClick={() => setState()}>clear</button>
+      </div>
+    )
+  }}
+</Playground>
+
+

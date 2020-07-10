@@ -1,0 +1,56 @@
+---
+name: useScript　
+route: '/useScript'
+---
+
+import { Playground } from 'docz'
+import { useScript } from "../../index";
+
+# useScript
+
+加载外部script
+
+---
+
+## API
+
+```jsx
+const [
+  ready: bool
+  status: 'idle' | 'loading' | 'ready' | 'error'
+] = useScript(
+  src: string,
+  attrs: {},
+);
+```
+
+### ready
+是否加载完成
+
+### status
+加载状态 'idle' | 'loading' | 'ready' | 'error'
+
+### src
+js文件路径
+
+### attrs
+配置 `script` 标签的 `Attribute` 属性
+
+---
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    const [ready, status] = useScript('https://pm28k14qlj.codesandbox.io/test-external-script.js', {
+      async: true,
+      'data-test': 'test'
+    });
+    return (
+      <div>
+        <div>ready?: {`${ready}`}</div>
+        <div>加载状态：{status}</div>
+      </div>
+    )
+  }}
+</Playground>

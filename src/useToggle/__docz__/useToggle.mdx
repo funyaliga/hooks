@@ -1,0 +1,63 @@
+---
+name: useToggle
+route: /api/useToggle
+---
+
+import { Playground } from 'docz'
+import { useToggle } from "../../index";
+
+# useToggle #
+
+状态切换
+
+<hr />
+
+## API ##
+```jsx
+type IState = string | number | boolean | undefined;
+
+const [
+  offValue: IState = false,
+  onValue: IState = true,
+] = useImage(
+  state: IState, // 当前状态
+  toggle: (nextValue?: any) => void // 切换
+);
+```
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    const [state1, toggle1] = useToggle();
+    const [state2, toggle2] = useToggle('off', 'on');
+    return (
+      <ul>
+        <li>
+          <div>
+            <h4>默认</h4>
+            <div>状态: {`${state1}`}</div>
+            <div>
+              <button onClick={toggle1}>toggle</button>
+              <button onClick={() => toggle1(true)}>set true</button>
+              <button onClick={() => toggle1(false)}>set false</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h4>on/off</h4>
+          <div>状态: {`${state2}`}</div>
+          <div>
+            <button onClick={toggle2}>toggle</button>
+            <button onClick={() => toggle2('on')}>set on</button>
+            <button onClick={() => toggle2('off')}>set off</button>
+          </div>
+        </li>
+      </ul>
+    )
+  }}
+</Playground>
+
+

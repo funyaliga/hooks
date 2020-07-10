@@ -1,0 +1,61 @@
+---
+name: useStorage
+route: /api/useStorage
+---
+
+import { Playground } from 'docz'
+import { useStorage } from "../../index";
+
+# useStorage #
+
+储存
+
+<hr />
+
+## API ##
+```jsx
+const [
+  value,
+  setValue,
+] = useStorage(
+  storage: Storage | Cookies,
+  key: string,
+  initialValue?: InitialValue<T>,
+  options = {}
+);
+```
+
+### storage
+要使用的storage, 支持 localStorage、sessionStorage、js-cookie
+
+### key
+storage的key值
+
+### initialValue
+初始值
+
+### options
+配置，在js-cookie时有效，例子： { expires: 7, path: '' }
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    if (typeof window=='undefined') {
+      return null;
+    }
+    const [state, setState] = useStorage(localStorage, 'store-key', 'value1');
+    return (
+      <div>
+        <div>value: {state}</div>
+        <button onClick={() => setState('value2')}>set value2</button>
+        <button onClick={() => setState('value3')}>set value3</button>
+        <button onClick={() => setState()}>clear</button>
+      </div>
+    )
+  }}
+</Playground>
+
+
