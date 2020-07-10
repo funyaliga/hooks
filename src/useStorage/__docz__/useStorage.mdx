@@ -43,6 +43,9 @@ storage的key值
 
 <Playground>
   {() => {
+    if (typeof window=='undefined') {
+      return null;
+    }
     const [state, setState] = useStorage(localStorage, 'store-key', 'value1');
     return (
       <div>

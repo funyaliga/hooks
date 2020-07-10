@@ -42,19 +42,14 @@ js文件路径
 
 <Playground>
   {() => {
-    const url = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'
-    const [ready, status] = useScript(url, {
+    const [ready, status] = useScript('https://pm28k14qlj.codesandbox.io/test-external-script.js', {
       async: true,
       'data-test': 'test'
     });
-    const script = document.querySelector(`script[src="${url}"]`);
     return (
       <div>
         <div>ready?: {`${ready}`}</div>
         <div>加载状态：{status}</div>
-        <div>script标签： 
-          <div>{script && script.outerHTML}</div>
-        </div>
       </div>
     )
   }}

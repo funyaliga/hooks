@@ -37,6 +37,9 @@ localStorage的key值
 
 <Playground>
   {() => {
+    if (typeof window=='undefined') {
+      return null;
+    }
     const [state, setState] = useSessionStorage('s-storage-key', 'value1');
     return (
       <div>
