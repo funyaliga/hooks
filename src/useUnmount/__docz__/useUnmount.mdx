@@ -1,0 +1,39 @@
+---
+name: useUnmount
+route: /api/useUnmount
+---
+
+import { Playground } from 'docz'
+import { useUnmount } from "../../index";
+
+# useUnmount #
+
+储存
+
+<hr />
+
+## API ##
+```jsx
+useStorage(
+  fn: () => void, // unmount 时执行的函数	
+);
+```
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    useUnmount(() => {
+      alert('unmount');
+    });
+    return (
+      <div>
+        unmount时有弹窗，切换到其他页面试试
+      </div>
+    )
+  }}
+</Playground>
+
+

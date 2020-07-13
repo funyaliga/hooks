@@ -7,3 +7,4 @@ export { useLocalStorage } from './useLocalStorage';
 export { useSessionStorage } from './useSessionStorage';
 export { default as useScript } from './useScript';
 export { default as usePrevious } from './usePrevious';
+export { default as useUnmount } from './useUnmount';
