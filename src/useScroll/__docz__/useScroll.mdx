@@ -1,0 +1,60 @@
+---
+name: useScroll
+route: /api/useScroll
+---
+
+import { Playground } from 'docz'
+import { useScroll } from "../../index";
+
+# useScroll #
+
+获取元素的滚动坐标。
+
+<hr />
+
+## API ##
+```jsx
+const {
+  x: Number, // x坐标
+  y: Number // y坐标
+} = useScroll(
+  target: () => HTMLElement | MutableRefObject<HTMLElement> | Document | Window, // DOM 节点或者 Ref 对象	
+);
+```
+
+<hr />
+
+## DEMO ##
+
+<Playground>
+  {() => {
+    const ref = React.useRef(null);
+    const { x, y } = useScroll(ref);
+  
+    return (
+      <div>
+        <div>x: {x}</div>
+        <div>y: {y}</div>
+        <div ref={ref} style={{ width: '300px', height: '300px', border: '1px solid #eee', padding: '10px', overflow: 'scroll', whiteSpace: 'nowrap' }} >
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+          <div>发水电费水电费水电费水电费水电费水电费水电费</div>
+        </div>
+      </div>
+    )
+  }}
+</Playground>
+
+
